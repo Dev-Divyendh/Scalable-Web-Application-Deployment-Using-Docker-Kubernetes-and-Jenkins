@@ -5,12 +5,15 @@ pipeline {
         DOCKER_IMAGE = 'tejaswi0502/ass2-dockerimage-dt'
         DOCKER_TAG = 'latest'
         DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials'
+        GITHUB_CREDENTIALS = 'github-credentials'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Dev-Divyendh/SWE645_Assignment2_DT'
+                git branch: 'main',
+                    credentialsId: "$GITHUB_CREDENTIALS",
+                    url: 'https://github.com/Dev-Divyendh/SWE645_Assignment2_DT.git'
             }
         }
         
