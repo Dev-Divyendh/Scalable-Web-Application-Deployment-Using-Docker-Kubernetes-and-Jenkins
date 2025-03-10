@@ -11,9 +11,11 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main',
-                    credentialsId: "$GITHUB_CREDENTIALS",
+                git (
+                    branch: 'main',
+                    credentialsId: "github_credentials",
                     url: 'https://github.com/Dev-Divyendh/SWE645_Assignment2_DT.git'
+                    )
             }
         }
         
