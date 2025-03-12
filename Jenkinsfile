@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'tejaswi0502/ass2-dockerimage-dt'
         DOCKER_TAG = 'latest'
-        DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials'
+        DOCKER_HUB_CREDENTIALS = 'docker-credentials'
         GITHUB_CREDENTIALS = 'github-credentials'
     }
 
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Push to Docker Hub') {
             steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v1/']) {
+                withDockerRegistry([credentialsId: 'docker-credentials', url: 'https://index.docker.io/v1/']) {
                 sh 'docker push $DOCKER_IMAGE:$DOCKER_TAG'
                 }
             }
