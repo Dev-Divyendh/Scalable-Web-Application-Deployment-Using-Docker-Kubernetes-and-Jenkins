@@ -36,9 +36,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                kubectl set image deployment/survey-app survey-container=tejaswi0502/ass2-dockerimage-dt:latest --namespace=default
+                kubectl set image deployment/survey-deployment survey-container=tejaswi0502/ass2-dockerimage-dt:latest --namespace=default
                 '''
-            }
-        }
+                }
+        }        
+
     }
 }
