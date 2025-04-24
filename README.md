@@ -1,4 +1,4 @@
-# SWE 645 - Assignment 2  
+# Scalable Web Application - CI/CD Pipleine
 **Containerization, Kubernetes Deployment, and CI/CD Pipeline for a Web Application**  
 
 ## Team Members  
